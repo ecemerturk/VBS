@@ -50,12 +50,19 @@ public partial class LoginForDB : System.Web.UI.Page
         if (datatable.Rows.Count > 0)
         {
             string yetkili = datatable.Rows[0][0].ToString();
-
-            //if (datatable.Rows.Count>1)
-            //{
-            //    Response.Write(" " + datatable.Rows[0][0].ToString() + "  "+ datatable.Rows[1][0].ToString());
-            //    Session
-            //}
+            if (datatable.Rows.Count ==2)
+            {
+                Session.Add("yetki1", datatable.Rows[0][0]);
+                Session.Add("yetki2", datatable.Rows[1][0]);
+                Response.Redirect("CokluGiris.aspx");
+            }
+            if(datatable.Rows.Count == 3)
+            {
+                Session.Add("yetki1", datatable.Rows[0][0]);
+                Session.Add("yetki2", datatable.Rows[1][0]);
+                Session.Add("yetki3", datatable.Rows[2][0]);
+                Response.Redirect("CokluGiris.aspx");
+            }
             if (yetkili == "YETKILI" || yetkili == "VELI" || yetkili == "OGRETMEN")
             {
                 Session.Add("kisi", TextBox1.Text);
@@ -64,7 +71,7 @@ public partial class LoginForDB : System.Web.UI.Page
                     string yetkili2 = datatable.Rows[1][0].ToString();
                     Session.Add("kisi2", TextBox1.Text);
                 }
-                Response.Redirect("Default.aspx");
+                Response.Redirect("CokluGiris.aspx");
             }
         }
         else
