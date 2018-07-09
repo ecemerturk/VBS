@@ -1,0 +1,164 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <script src="js/bootstrap.min.js"></script>
+    <link href="masterstyle.css" rel="stylesheet" />
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <nav class="navbar navbar-dark" style="background-color: darkslategrey;">
+            <a class="navbar-brand" href="#">Yumurcak Anaokulu</a>
+            <a class="nav-item nav-link active" href="#">Giriş <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link" href="#">Misyonumuz</a>
+            <a class="nav-item nav-link" href="#">Kadromuz</a>
+            <a class="nav-item nav-link" href="#">Ücretler</a>
+            <a class="nav-item nav-link" href="#">İletişim</a>
+        </nav>
+        <div style="min-height: 50px">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <section id="sidebar">
+            <div class="wrapper" style="position: center">
+                <div class="row">
+                    <div>
+                        <asp:Menu ID="Menu1" runat="server">
+                        </asp:Menu>
+                        <div class="list-group" id="list-tab" role="tablist">
+                            <h3><strong>&nbsp;&nbsp;&nbsp;İŞLEMLER</strong></h3>
+                            <asp:Panel ID="Panel1" runat="server">
+                                <a class="list-group-item list-group-item-action" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Yetkilendirme</a>
+                            </asp:Panel>
+                            <asp:Panel ID="Panel2" runat="server">
+                                <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Öğrenci Bilgileri</a>
+                            </asp:Panel>
+                            <asp:Panel ID="Panel3" runat="server">
+                                <a class="list-group-item list-group-item-action" id="list-messages-list2" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Veli Bilgileri</a>
+                            </asp:Panel>
+                            <asp:Panel ID="Panel4" runat="server">
+                                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle list-group-item list-group-item-action">Öğrenci Değerlendirme</a>
+                            </asp:Panel>
+                            
+                            <ul class="collapse list-unstyled" id="pageSubmenu">
+                                <li>
+                                    <asp:Panel ID="Panel5" runat="server">
+                                        <a class="dropdown-item" href="#">Form Ekle</a>
+                                    </asp:Panel>
+                                </li>
+                                <li>
+                                    <asp:Panel ID="Panel6" runat="server">
+                                        <a class="dropdown-item" href="#">Sonuçlar</a>
+                                    </asp:Panel>
+                                </li>
+                                <li>
+                                    <asp:Panel ID="Panel7" runat="server">
+                                        <a class="dropdown-item" href="#">Form Doldurma</a>
+                                    </asp:Panel>
+                                </li>
+                            </ul>
+
+
+                            <asp:Panel ID="Panel8" runat="server">
+                                <a href="#pageSubmenu2" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle list-group-item list-group-item-action">Anket</a>
+                            </asp:Panel>
+                            <ul class="collapse list-unstyled" id="pageSubmenu2"
+                                <li>
+                                    <asp:Panel ID="Panel9" runat="server">
+                                        <a class="dropdown-item" href="#">Form Ekle</a>
+                                    </asp:Panel>
+                                </li>
+                                <li>
+                                    <asp:Panel ID="Panel10" runat="server">
+                                        <a class="dropdown-item" href="#">Sonuçlar</a>
+                                    </asp:Panel>
+                                </li>
+                                <li>
+                                    <asp:Panel ID="Panel11" runat="server">
+                                        <a class="dropdown-item" href="#">Ankete Git</a>
+                                    </asp:Panel>
+                                </li>
+                            </ul>
+
+                            <asp:Panel ID="Panel12" runat="server">
+                                <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Yemek Listesi</a>
+                            </asp:Panel>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div style="min-height: 50px">
+            <asp:ContentPlaceHolder ID="content1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+        <section id="footer" style="background-color: mediumturquoise">
+            <div class="container">
+                <div class="row text-center text-xs-center text-sm-left text-md-left">
+                    <div class="col-xs-12 col-sm-4 col-md-4">
+                        <h5>Hızlı Linkler</h5>
+                        <ul class="list-unstyled quick-links">
+                            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>M.E.B.</a></li>
+                            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Anasayfa</a></li>
+                            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Yönetmelik</a></li>
+                            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Yardım</a></li>
+                            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>S.S.S.</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-12 col-sm-4 col-md-4">
+                        <h5>Hızlı Linkler</h5>
+                        <ul class="list-unstyled quick-links">
+                            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Tübitak</a></li>
+                            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Bilim Çocuk</a></li>
+                            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>NAT Kids</a></li>
+                            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Çocuklara Oyunlar</a></li>
+                            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Videolar</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-12 col-sm-4 col-md-4">
+                        <h5>Hızlı Linkler</h5>
+                        <ul class="list-unstyled quick-links">
+                            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Kadromuz</a></li>
+                            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Ücretler</a></li>
+                            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Dersler</a></li>
+                            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Misyonumuz</a></li>
+                            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Kadromuz</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5">
+                        <ul class="list-unstyled list-inline social text-center">
+                            <li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-facebook"></i></a></li>
+                            <li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-twitter"></i></a></li>
+                            <li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-instagram"></i></a></li>
+                            <li class="list-inline-item"><a href="javascript:void();" target="_blank"><i class="fa fa-envelope"></i></a></li>
+                        </ul>
+                    </div>
+                    
+	
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
+                        <p><u><a href="https://www.google.com/">Yumurcak Anaokulu</a></u>, bir eğitim kuruluşudur.</p>
+                        <p class="h6">&copy Her Hakkı Saklıdır.<a class="text-green ml-2" href="https://www.google.com" target="_blank">E2K</a></p>
+                    </div>
+
+
+                </div>
+            </div>
+        </section>
+    </form>
+</body>
+
+</html>

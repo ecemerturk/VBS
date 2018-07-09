@@ -1,0 +1,116 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Data.SqlClient;
+using System.Data;
+using System.Web.Security;
+using System.Configuration;
+using System.Collections;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+using sqlQuery;
+
+public partial class MasterPage : System.Web.UI.MasterPage
+{
+    
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        
+        Panel1.Visible = false;
+        Panel2.Visible = false;
+        Panel3.Visible = false;
+        Panel4.Visible = false;
+        Panel5.Visible = false;
+        Panel6.Visible = false;
+        Panel7.Visible = false;
+        Panel8.Visible = false;
+        Panel9.Visible = false;
+        Panel10.Visible = false;
+        Panel11.Visible = false;
+        Panel12.Visible = false;
+
+        string query2 = "";
+        string nl = System.Environment.NewLine;
+        query2 += nl + "SELECT P.PANELICERIK_ID AS SAYFALAR ";
+        query2 += nl + "FROM VELI V, KISI_YETKILER KY, YETKILER Y, YETKILER_PANELICERIK YP, PANEL_ICERIK P ";
+        query2 += nl + "WHERE (V.VELI_SIFRE = '" + Session["kisi"] + "' ) AND ";
+        query2 += nl + " V.VELI_ID= KY.KISI_ID AND KY.YETKI_ID= Y.YETKI_ID AND Y.YETKI_ID=YP.YETKI_ID ";
+        query2 += nl + "AND YP.PANELICERIK_ID=P.PANELICERIK_ID";
+        query2 += nl + "UNION ALL";
+        query2 += nl + "SELECT P.PANELICERIK_ID AS SAYFALAR";
+        query2 += nl + "FROM YETKILI A, KISI_YETKILER KY, YETKILER Y, YETKILER_PANELICERIK YP, PANEL_ICERIK P ";
+        query2 += nl + "WHERE(A.YETKILI_SIFRE = '" + Session["kisi"] + "') AND";
+        query2 += nl + "A.YETKILI_ID = KY.KISI_ID AND KY.YETKI_ID= Y.YETKI_ID AND Y.YETKI_ID=YP.YETKI_ID ";
+        query2 += nl + "AND YP.PANELICERIK_ID=P.PANELICERIK_ID";
+        query2 += nl + "UNION ALL";
+        query2 += nl + "SELECT P.PANELICERIK_ID AS SAYFALAR";
+        query2 += nl + "FROM OGRETMEN O, KISI_YETKILER KY, YETKILER Y, YETKILER_PANELICERIK YP, PANEL_ICERIK P ";
+        query2 += nl + "WHERE(O.OGRETMEN_SIFRE = '" + Session["kisi"] + "') AND ";
+        query2 += nl + "O.OGRETMEN_ID= KY.KISI_ID AND KY.YETKI_ID= Y.YETKI_ID AND Y.YETKI_ID=YP.YETKI_ID";
+        query2 += nl + "AND YP.PANELICERIK_ID=P.PANELICERIK_ID";
+
+        SqlQuery sqlquery = new SqlQuery();
+        DataTable datatable = sqlquery.Query(query2);
+        DBMenuYetki(datatable);
+
+    }
+    public void DBMenuYetki(DataTable datatable)
+    {
+
+        for (int b = 0; b < datatable.Rows.Count; b++)
+        {
+            if (datatable.Rows[b][0].ToString() == "1")
+            {
+                Panel1.Visible = true;
+            }
+            else if (datatable.Rows[b][0].ToString() == "2")
+            {
+                Panel2.Visible = true;
+            }
+            else if (datatable.Rows[b][0].ToString() == "3")
+            {
+                Panel3.Visible = true;
+            }
+            else if (datatable.Rows[b][0].ToString() == "4")
+            {
+                Panel4.Visible = true;
+            }
+            else if (datatable.Rows[b][0].ToString() == "5")
+            {
+                Panel5.Visible = true;
+            }
+            else if (datatable.Rows[b][0].ToString() == "6")
+            {
+                Panel6.Visible = true;
+            }
+            else if (datatable.Rows[b][0].ToString() == "7")
+            {
+                Panel7.Visible = true;
+            }
+            else if (datatable.Rows[b][0].ToString() == "8")
+            {
+                Panel8.Visible = true;
+            }
+            else if (datatable.Rows[b][0].ToString() == "9")
+            {
+                Panel9.Visible = true;
+            }
+            else if (datatable.Rows[b][0].ToString() == "10")
+            {
+                Panel10.Visible = true;
+            }
+            else if (datatable.Rows[b][0].ToString() == "11")
+            {
+                Panel11.Visible = true;
+            }
+            else if (datatable.Rows[b][0].ToString() == "12")
+            {
+                Panel12.Visible = true;
+            }
+        }
+
+    }
+}
