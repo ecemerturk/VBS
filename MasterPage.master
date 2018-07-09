@@ -71,7 +71,7 @@
                             <asp:Panel ID="Panel8" runat="server">
                                 <a href="#pageSubmenu2" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle list-group-item list-group-item-action">Anket</a>
                             </asp:Panel>
-                            <ul class="collapse list-unstyled" id="pageSubmenu2"
+                            <ul class="collapse list-unstyled" id="pageSubmenu2">
                                 <li>
                                     <asp:Panel ID="Panel9" runat="server">
                                         <a class="dropdown-item" href="#">Form Ekle</a>

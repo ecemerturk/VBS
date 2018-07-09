@@ -10,7 +10,7 @@ using System.Web.Security;
 using sqlQuery;
 
 
-public partial class LoginForDB : System.Web.UI.Page 
+public partial class LoginForDB : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -25,6 +25,7 @@ public partial class LoginForDB : System.Web.UI.Page
 
         string query = "";
         string nl = System.Environment.NewLine;
+
 
         query += nl + " SELECT 'VELI' AS TABLOADI, VELI_ID AS ID FROM VELI  ";
         query += nl + " WHERE (VELI_MAIL = '" + TextBox2.Text + "' ) AND  ";
@@ -46,33 +47,27 @@ public partial class LoginForDB : System.Web.UI.Page
     }
     public void controlLogin(DataTable datatable)
     {
-        
-        if (datatable.Rows.Count > 0)
+
+        //string yetkili = datatable.Rows[0][0].ToString();
+        if (datatable.Rows.Count == 2)
         {
-            string yetkili = datatable.Rows[0][0].ToString();
-            if (datatable.Rows.Count ==2)
-            {
-                Session.Add("yetki1", datatable.Rows[0][0]);
-                Session.Add("yetki2", datatable.Rows[1][0]);
-                Response.Redirect("CokluGiris.aspx");
-            }
-            if(datatable.Rows.Count == 3)
-            {
-                Session.Add("yetki1", datatable.Rows[0][0]);
-                Session.Add("yetki2", datatable.Rows[1][0]);
-                Session.Add("yetki3", datatable.Rows[2][0]);
-                Response.Redirect("CokluGiris.aspx");
-            }
-            if (yetkili == "YETKILI" || yetkili == "VELI" || yetkili == "OGRETMEN")
-            {
-                Session.Add("kisi", TextBox1.Text);
-                if (datatable.Rows.Count > 1)
-                {
-                    string yetkili2 = datatable.Rows[1][0].ToString();
-                    Session.Add("kisi2", TextBox1.Text);
-                }
-                Response.Redirect("CokluGiris.aspx");
-            }
+            Session.Add("yetki1", datatable.Rows[0][0]);
+            Session.Add("yetki2", datatable.Rows[1][0]);
+            Session.Add("kisi", TextBox1.Text);
+            Response.Redirect("CokluGiris.aspx");
+        }
+        if (datatable.Rows.Count == 3)
+        {
+            Session.Add("yetki1", datatable.Rows[0][0]);
+            Session.Add("yetki2", datatable.Rows[1][0]);
+            Session.Add("yetki3", datatable.Rows[2][0]);
+            Session.Add("kisi", TextBox1.Text);
+            Response.Redirect("CokluGiris.aspx");
+        }
+        if(datatable.Rows.Count==1 )
+        {
+            Session.Add("kisi", TextBox1.Text);
+            Response.Redirect("Default.aspx");
         }
         else
         {
