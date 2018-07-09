@@ -3,8 +3,13 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="content1" runat="Server">
-    <asp:Button ID="Button1" runat="server" Text="Veli Girişi" OnClick="Button1_Click"/>
-    <asp:Button ID="Button2" runat="server" Text="Öğretmen Girişi" OnClick="Button2_Click" />
-    <asp:Button ID="Button3" runat="server" Text="Yetkili Girişi" OnClick="Button3_Click" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <script src="js/bootstrap.min.js"></script>
+    <asp:Button ID="Button1" runat="server" CssClass="btn btn-danger col-lg" type="submit" Text="Veli Girişi" OnClick="Button1_Click" />
+    <asp:Button ID="Button2" runat="server" CssClass="btn btn-primary col-lg" Text="Öğretmen Girişi" type="submit" OnClick="Button2_Click" />
+    <asp:Button ID="Button3" runat="server" Text="Yetkili Girişi" CssClass="btn btn-danger col-lg" type="submit" OnClick="Button3_Click" />
+    <div>
+
+    </div>
 </asp:Content>
 

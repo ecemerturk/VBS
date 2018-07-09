@@ -17,9 +17,9 @@ public partial class _Default : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        Button1.Visible = false;
-        Button2.Visible = false;
-        Button3.Visible = false;
+        Button1.Visible = true;
+        Button2.Visible = true;
+        Button3.Visible = true;
         showButton();
     }
     public void showButton()
