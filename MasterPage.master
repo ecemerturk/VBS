@@ -66,8 +66,6 @@
                                     </asp:Panel>
                                 </li>
                             </ul>
-
-
                             <asp:Panel ID="Panel8" runat="server">
                                 <a href="#pageSubmenu2" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle list-group-item list-group-item-action">Anket</a>
                             </asp:Panel>

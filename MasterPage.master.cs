@@ -32,29 +32,45 @@ public partial class MasterPage : System.Web.UI.MasterPage
         Panel11.Visible = false;
         Panel12.Visible = false;
 
+        string query1 = "";
         string query2 = "";
+        string query3 = "";
         string nl = System.Environment.NewLine;
-        query2 += nl + "SELECT P.PANELICERIK_ID AS SAYFALAR ";
-        query2 += nl + "FROM VELI V, KISI_YETKILER KY, YETKILER Y, YETKILER_PANELICERIK YP, PANEL_ICERIK P ";
-        query2 += nl + "WHERE (V.VELI_SIFRE = '" + Session["kisi"] + "' ) AND ";
-        query2 += nl + " V.VELI_ID= KY.KISI_ID AND KY.YETKI_ID= Y.YETKI_ID AND Y.YETKI_ID=YP.YETKI_ID ";
-        query2 += nl + "AND YP.PANELICERIK_ID=P.PANELICERIK_ID";
-        query2 += nl + "UNION ALL";
-        query2 += nl + "SELECT P.PANELICERIK_ID AS SAYFALAR";
-        query2 += nl + "FROM YETKILI A, KISI_YETKILER KY, YETKILER Y, YETKILER_PANELICERIK YP, PANEL_ICERIK P ";
-        query2 += nl + "WHERE(A.YETKILI_SIFRE = '" + Session["kisi"] + "') AND";
-        query2 += nl + "A.YETKILI_ID = KY.KISI_ID AND KY.YETKI_ID= Y.YETKI_ID AND Y.YETKI_ID=YP.YETKI_ID ";
-        query2 += nl + "AND YP.PANELICERIK_ID=P.PANELICERIK_ID";
-        query2 += nl + "UNION ALL";
-        query2 += nl + "SELECT P.PANELICERIK_ID AS SAYFALAR";
-        query2 += nl + "FROM OGRETMEN O, KISI_YETKILER KY, YETKILER Y, YETKILER_PANELICERIK YP, PANEL_ICERIK P ";
-        query2 += nl + "WHERE(O.OGRETMEN_SIFRE = '" + Session["kisi"] + "') AND ";
-        query2 += nl + "O.OGRETMEN_ID= KY.KISI_ID AND KY.YETKI_ID= Y.YETKI_ID AND Y.YETKI_ID=YP.YETKI_ID";
-        query2 += nl + "AND YP.PANELICERIK_ID=P.PANELICERIK_ID";
+        query1 += nl + "SELECT P.PANELICERIK_ID ";
+        query1 += nl + "FROM VELI V, KISI K, KISI_YETKILER KY, YETKILER Y, YETKILER_PANELICERIK YP, PANEL_ICERIK P";
+        query1 += nl + "WHERE V.VELI_SIFRE ='" + Session["kisi"] + "' AND V.VELI_ID=K.KISI_ID AND K.KISI_ID= KY.KISI_ID AND KY.YETKI_ID= Y.YETKI_ID AND";
+        query1 += nl + "Y.YETKI_ID= YP.YETKI_ID AND YP.PANELICERIK_ID = P.PANELICERIK_ID";
+        
+        query2 += nl + "SELECT P.PANELICERIK_ID ";
+        query2 += nl + "FROM OGRETMEN O, KISI K, KISI_YETKILER KY, YETKILER Y, YETKILER_PANELICERIK YP, PANEL_ICERIK P";
+        query2 += nl + "O.OGRETMEN_SIFRE ='" + Session["kisi"] + "' AND O.OGRETMEN_ID=K.KISI_ID AND K.KISI_ID= KY.KISI_ID AND KY.YETKI_ID= Y.YETKI_ID AND";
+        query2 += nl + "Y.YETKI_ID= YP.YETKI_ID AND YP.PANELICERIK_ID = P.PANELICERIK_ID";
+       
+        query3 += nl + "SELECT P.PANELICERIK_ID";
+        query3 += nl + "FROM YETKILI YY, KISI K, KISI_YETKILER KY, YETKILER Y, YETKILER_PANELICERIK YP,PANEL_ICERIK P ";
+        query3 += nl + "WHERE YY.YETKILI_SIFRE ='" + Session["kisi"] + "' AND YY.YETKILI_ID=K.KISI_ID AND K.KISI_ID= KY.KISI_ID AND KY.YETKI_ID= Y.YETKI_ID AND";
+        query3 += nl + "Y.YETKI_ID= YP.YETKI_ID AND YP.PANELICERIK_ID = P.PANELICERIK_ID";
 
-        SqlQuery sqlquery = new SqlQuery();
-        DataTable datatable = sqlquery.Query(query2);
-        DBMenuYetki(datatable);
+        if(Session["bilgi"].ToString()=="YETKILI")
+        {
+            SqlQuery sqlquery = new SqlQuery();
+            DataTable datatable = sqlquery.Query(query3);
+            DBMenuYetki(datatable);
+        }
+        if(Session["bilgi"].ToString() =="VELI")
+        {
+            SqlQuery sqlquery = new SqlQuery();
+            DataTable datatable = sqlquery.Query(query1);
+            DBMenuYetki(datatable);
+
+        }
+        if(Session["bilgi"].ToString() == "OGRETMEN")
+        {
+            SqlQuery sqlquery = new SqlQuery();
+            DataTable datatable = sqlquery.Query(query2);
+            DBMenuYetki(datatable);
+        }
+        
 
     }
     public void DBMenuYetki(DataTable datatable)

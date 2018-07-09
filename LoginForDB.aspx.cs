@@ -48,24 +48,29 @@ public partial class LoginForDB : System.Web.UI.Page
     public void controlLogin(DataTable datatable)
     {
 
-        //string yetkili = datatable.Rows[0][0].ToString();
-        if (datatable.Rows.Count == 2)
+        string yetkili = datatable.Rows[0][0].ToString();
+        int count = 0;
+        if (datatable.Rows.Count >= 2)
         {
-            Session.Add("yetki1", datatable.Rows[0][0]);
-            Session.Add("yetki2", datatable.Rows[1][0]);
-            Session.Add("kisi", TextBox1.Text);
-            Response.Redirect("CokluGiris.aspx");
+            if (datatable.Rows[0][0].ToString() == "VELI" || datatable.Rows[1][0].ToString() == "VELI" || datatable.Rows[2][0].ToString() == "VELI")
+            {
+                Session.Add("yetki1", TextBox1.Text);
+                Response.Redirect("CokluGiris.aspx");
+            }
+            if (datatable.Rows[0][0].ToString() == "OGRETMEN" || datatable.Rows[1][0].ToString() == "OGRETMEN" || datatable.Rows[2][0].ToString() == "OGRETMEN")
+            {
+                Session.Add("yetki2", TextBox1.Text);
+                Response.Redirect("CokluGiris.aspx");
+            }
+            if (datatable.Rows[0][0].ToString() == "YETKILI" || datatable.Rows[1][0].ToString() == "YETKILI" || datatable.Rows[2][0].ToString() == "YETKILI")
+            {
+                Session.Add("yetki3", TextBox1.Text);
+                Response.Redirect("CokluGiris.aspx");
+            }
         }
-        if (datatable.Rows.Count == 3)
+        if (datatable.Rows.Count == 1)
         {
-            Session.Add("yetki1", datatable.Rows[0][0]);
-            Session.Add("yetki2", datatable.Rows[1][0]);
-            Session.Add("yetki3", datatable.Rows[2][0]);
-            Session.Add("kisi", TextBox1.Text);
-            Response.Redirect("CokluGiris.aspx");
-        }
-        if(datatable.Rows.Count==1 )
-        {
+            Session.Add("bilgi", yetkili);
             Session.Add("kisi", TextBox1.Text);
             Response.Redirect("Default.aspx");
         }

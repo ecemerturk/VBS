@@ -41,7 +41,8 @@ public partial class _Default : System.Web.UI.Page
 
     protected void Button1_Click(object sender, EventArgs e)
     {
-        Session.Add("kisi", Session["kisi"]);
+        Session.Add("bilgi", "VELI");
+        Session.Add("kisi", Session["yetki1"]);
         Response.Redirect("Default.aspx");
 
         //if(Session["yetki1"].ToString()== "VELI")
@@ -62,6 +63,9 @@ public partial class _Default : System.Web.UI.Page
 
     protected void Button2_Click(object sender, EventArgs e)
     {
+        Session.Add("bilgi", "OGRETMEN");
+        Session.Add("kisi", Session["yetki2"]);
+        Response.Redirect("Default.aspx");
         //if (Session["yetki1"].ToString() == "OGRETMEN")
         //{
         //    Session.Add("kisi", Session["kisi"]);
@@ -81,6 +85,9 @@ public partial class _Default : System.Web.UI.Page
 
     protected void Button3_Click(object sender, EventArgs e)
     {
+        Session.Add("bilgi", "YETKILI");
+        Session.Add("kisi", Session["yetki3"]);
+        Response.Redirect("Default.aspx");
         //if (Session["yetki1"].ToString() == "YETKILI")
         //{
         //    Session.Add("kisi", Session["kisi"]);
