@@ -49,24 +49,44 @@ public partial class LoginForDB : System.Web.UI.Page
     {
 
         string yetkili = datatable.Rows[0][0].ToString();
-        int count = 0;
+        
+        
         if (datatable.Rows.Count >= 2)
         {
-            if (datatable.Rows[0][0].ToString() == "VELI" || datatable.Rows[1][0].ToString() == "VELI" || datatable.Rows[2][0].ToString() == "VELI")
+            if (datatable.Rows[0][0].Equals("VELI") == true || datatable.Rows[1][0].Equals("VELI") == true || datatable.Rows[2][0].Equals("VELI") == true)
             {
                 Session.Add("yetki1", TextBox1.Text);
-                Response.Redirect("CokluGiris.aspx");
+                Session.Add("bilgi", yetkili);
+                if (datatable.Rows[0][0].Equals("OGRETMEN") == true || datatable.Rows[1][0].Equals("OGRETMEN") == true || datatable.Rows[2][0].Equals("OGRETMEN") == true)
+                {
+                    string yetkili2 = datatable.Rows[1][0].ToString();
+                    Session.Add("yetki2", TextBox1.Text);
+                    Session.Add("bilgi", yetkili2);
+                    if (datatable.Rows.Count==3)
+                    {
+                        if (datatable.Rows[0][0].Equals("YETKILI") == true || datatable.Rows[1][0].Equals("YETKILI") == true || datatable.Rows[2][0].Equals("YETKILI") == true)
+                        {
+                            string yetkili3 = datatable.Rows[2][0].ToString();
+                            Session.Add("bilgi", yetkili3);
+                            Session.Add("yetki3", TextBox1.Text);
+                            Response.Redirect("CokluGiris.aspx");
+                        }
+                    }
+                    Response.Redirect("CokluGiris.aspx");
+
+                }
+               
             }
-            if (datatable.Rows[0][0].ToString() == "OGRETMEN" || datatable.Rows[1][0].ToString() == "OGRETMEN" || datatable.Rows[2][0].ToString() == "OGRETMEN")
-            {
-                Session.Add("yetki2", TextBox1.Text);
-                Response.Redirect("CokluGiris.aspx");
-            }
-            if (datatable.Rows[0][0].ToString() == "YETKILI" || datatable.Rows[1][0].ToString() == "YETKILI" || datatable.Rows[2][0].ToString() == "YETKILI")
-            {
-                Session.Add("yetki3", TextBox1.Text);
-                Response.Redirect("CokluGiris.aspx");
-            }
+            //if (datatable.Rows[0][0].Equals("OGRETMEN") == true || datatable.Rows[1][0].Equals("OGRETMEN") == true || datatable.Rows[2][0].Equals("OGRETMEN") == true)
+            //{
+            //    Session.Add("yetki2", TextBox1.Text);
+            //    Response.Redirect("CokluGiris.aspx");
+            //}
+            //if (datatable.Rows[0][0].Equals("YETKILI") == true || datatable.Rows[1][0].Equals("YETKILI") == true || datatable.Rows[2][0].Equals("YETKILI") == true)
+            //{
+            //    Session.Add("yetki3", TextBox1.Text);
+            //    Response.Redirect("CokluGiris.aspx");
+            //}
         }
         if (datatable.Rows.Count == 1)
         {
