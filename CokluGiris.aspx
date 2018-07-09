@@ -8,8 +8,7 @@
     <asp:Button ID="Button1" runat="server" CssClass="btn btn-danger col-lg" type="submit" Text="Veli Girişi" OnClick="Button1_Click" />
     <asp:Button ID="Button2" runat="server" CssClass="btn btn-primary col-lg" Text="Öğretmen Girişi" type="submit" OnClick="Button2_Click" />
     <asp:Button ID="Button3" runat="server" Text="Yetkili Girişi" CssClass="btn btn-danger col-lg" type="submit" OnClick="Button3_Click" />
-    <div>
-
+    <div style="min-height:370px">
     </div>
 </asp:Content>
 
