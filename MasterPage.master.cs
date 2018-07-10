@@ -132,6 +132,6 @@ public partial class MasterPage : System.Web.UI.MasterPage
                 Panel12.Visible = true;
             }
         }
-
     }
+    
 }
