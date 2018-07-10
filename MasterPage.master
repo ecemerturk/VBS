@@ -37,13 +37,13 @@
                         <div class="list-group" id="list-tab" role="tablist">
                             <h3><strong>&nbsp;&nbsp;&nbsp;İŞLEMLER</strong></h3>
                             <asp:Panel ID="Panel1" runat="server">
-                                <a class="list-group-item list-group-item-action" href="Yetkilendirme.aspx" >Yetkilendirme</a>
+                                <a class="list-group-item list-group-item-action" href="reklam.aspx?n=yetkilendirme" >Yetkilendirme</a>
                             </asp:Panel>
                             <asp:Panel ID="Panel2" runat="server">
-                                <a class="list-group-item list-group-item-action" href="reklam.aspx">Öğrenci Bilgileri</a>
+                                <a class="list-group-item list-group-item-action" href="reklam.aspx?n=ogrencibilgileri">Öğrenci Bilgileri</a>
                             </asp:Panel>
                             <asp:Panel ID="Panel3" runat="server">
-                                <a class="list-group-item list-group-item-action" href="reklam.aspx"> Veli Bilgileri</a>
+                                <a class="list-group-item list-group-item-action" href="reklam.aspx?n=velibilgileri"> Veli Bilgileri</a>
                             </asp:Panel>
                             <asp:Panel ID="Panel4" runat="server">
                                 <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle list-group-item list-group-item-action">Öğrenci Değerlendirme</a>
@@ -52,17 +52,17 @@
                             <ul class="collapse list-unstyled" id="pageSubmenu">
                                 <li>
                                     <asp:Panel ID="Panel5" runat="server">
-                                        <a class="dropdown-item" href="reklam.aspx">Form Ekle</a>
+                                        <a class="dropdown-item" href="reklam.aspx?n=ogrenciformekle">Form Ekle</a>
                                     </asp:Panel>
                                 </li>
                                 <li>
                                     <asp:Panel ID="Panel6" runat="server">
-                                        <a class="dropdown-item" href="reklam.aspx">Sonuçlar</a>
+                                        <a class="dropdown-item" href="reklam.aspx?n=ogrencisonuclar">Sonuçlar</a>
                                     </asp:Panel>
                                 </li>
                                 <li>
                                     <asp:Panel ID="Panel7" runat="server">
-                                        <a class="dropdown-item" href="reklam.aspx">Form Doldurma</a>
+                                        <a class="dropdown-item" href="reklam.aspx?n=ogrenciformdoldurma">Form Doldurma</a>
                                     </asp:Panel>
                                 </li>
                             </ul>
@@ -72,23 +72,23 @@
                             <ul class="collapse list-unstyled" id="pageSubmenu2">
                                 <li>
                                     <asp:Panel ID="Panel9" runat="server">
-                                        <a class="dropdown-item" href="reklam.aspx">Form Ekle</a>
+                                        <a class="dropdown-item" href="reklam.aspx?n=anketformekle">Form Ekle</a>
                                     </asp:Panel>
                                 </li>
                                 <li>
                                     <asp:Panel ID="Panel10" runat="server">
-                                        <a class="dropdown-item" href="reklam.aspx">Sonuçlar</a>
+                                        <a class="dropdown-item" href="reklam.aspx?n=anketsonuclar">Sonuçlar</a>
                                     </asp:Panel>
                                 </li>
                                 <li>
                                     <asp:Panel ID="Panel11" runat="server">
-                                        <a class="dropdown-item" href="reklam.aspx">Ankete Git</a>
+                                        <a class="dropdown-item" href="reklam.aspx?n=anketegit">Ankete Git</a>
                                     </asp:Panel>
                                 </li>
                             </ul>
 
                             <asp:Panel ID="Panel12" runat="server">
-                                <a class="list-group-item list-group-item-action" href="reklam.aspx">Yemek Listesi</a>
+                                <a class="list-group-item list-group-item-action" href="reklam.aspx?n=yemeklistesi">Yemek Listesi</a>
                             </asp:Panel>
                         </div>
                     </div>
@@ -158,5 +158,4 @@
         </section>
     </form>
 </body>
-
 </html>

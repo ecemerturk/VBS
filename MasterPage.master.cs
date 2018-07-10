@@ -15,10 +15,10 @@ using sqlQuery;
 
 public partial class MasterPage : System.Web.UI.MasterPage
 {
-    
+
     protected void Page_Load(object sender, EventArgs e)
     {
-        
+
         Panel1.Visible = false;
         Panel2.Visible = false;
         Panel3.Visible = false;
@@ -40,7 +40,7 @@ public partial class MasterPage : System.Web.UI.MasterPage
         query1 += nl + "SELECT P.PANELICERIK_ID AS SAYFALAR ";
         query1 += nl + "FROM VELI V, KISI K, KISI_YETKILER KY, YETKILER Y, YETKILER_PANELICERIK YP, PANEL_ICERIK P ";
         query1 += nl + "WHERE (V.VELI_SIFRE = '" + Session["kisi"] + "' ) AND ";
-        query1 += nl + " V.VELI_ID=K.KISI_ID AND K.KISI_ID= KY.KISI_ID AND KY.YETKI_ID= Y.YETKI_ID AND Y.YETKI_ISMI= '"+Session["bilgi"]+"' AND ";
+        query1 += nl + " V.VELI_ID=K.KISI_ID AND K.KISI_ID= KY.KISI_ID AND KY.YETKI_ID= Y.YETKI_ID AND Y.YETKI_ISMI= '" + Session["bilgi"] + "' AND ";
         query1 += nl + "Y.YETKI_ID= YP.YETKI_ID AND YP.PANELICERIK_ID = P.PANELICERIK_ID";
 
         query2 += nl + "SELECT P.PANELICERIK_ID AS SAYFALAR";
@@ -55,9 +55,9 @@ public partial class MasterPage : System.Web.UI.MasterPage
         query3 += nl + "O.OGRETMEN_ID= K.KISI_ID AND K.KISI_ID= KY.KISI_ID AND KY.YETKI_ID= Y.YETKI_ID AND Y.YETKI_ISMI= '" + Session["bilgi"] + "' AND ";
         query3 += nl + "Y.YETKI_ID= YP.YETKI_ID AND YP.PANELICERIK_ID = P.PANELICERIK_ID";
 
-        if(Session["bilgi"] !=null)
+        if (Session["bilgi"] != null)
         {
-            if(Session["bilgi"].ToString()=="VELI")
+            if (Session["bilgi"].ToString() == "VELI")
             {
                 SqlQuery sqlquery = new SqlQuery();
                 DataTable datatable = sqlquery.Query(query1);
@@ -132,5 +132,5 @@ public partial class MasterPage : System.Web.UI.MasterPage
             }
         }
     }
-    
+
 }
