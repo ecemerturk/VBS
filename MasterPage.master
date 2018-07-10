@@ -43,7 +43,7 @@
                                 <a class="list-group-item list-group-item-action" href="reklam.aspx?n=ogrencibilgileri">Öğrenci Bilgileri</a>
                             </asp:Panel>
                             <asp:Panel ID="Panel3" runat="server">
-                                <a class="list-group-item list-group-item-action" href="reklam.aspx?n=velibilgileri"> Veli Bilgileri</a>
+                                <a class="list-group-item list-group-item-action" href="VeliBilgileri.aspx"> Veli Bilgileri</a>
                             </asp:Panel>
                             <asp:Panel ID="Panel4" runat="server">
                                 <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle list-group-item list-group-item-action">Öğrenci Değerlendirme</a>
