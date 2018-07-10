@@ -32,6 +32,7 @@ public partial class MasterPage : System.Web.UI.MasterPage
         Panel11.Visible = false;
         Panel12.Visible = false;
 
+
         string query1 = "";
         string query2 = "";
         string query3 = "";
@@ -75,8 +76,6 @@ public partial class MasterPage : System.Web.UI.MasterPage
                 DBMenuYetki(datatable);
             }
         }
-       
-
     }
     public void DBMenuYetki(DataTable datatable)
     {
@@ -132,6 +131,5 @@ public partial class MasterPage : System.Web.UI.MasterPage
                 Panel12.Visible = true;
             }
         }
-
     }
 }
