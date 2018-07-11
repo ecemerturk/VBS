@@ -7,27 +7,27 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="content1" runat="Server">
     <div class="container">
         <div>
-            T.C. Kimlik Numarası:
+            Kişi Numarası:
             <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
         </div>
         <div>
-            Adı:
-            <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+            T.C. Kimlik Numarası:
+            <asp:TextBox ID="TextBox2" runat="server" ></asp:TextBox>
         </div>
         <div>
-            Soyadı:
+            Adı:
             <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
         </div>
         <div>
-            Doğum Tarihi:
+            Soyadı:
             <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
         </div>
         <div>
-            Kan Grubu:
+            Doğum Tarihi:
             <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
         </div>
         <div>
-            Kişi Numarası:
+            Kan Grubu:
             <asp:TextBox ID="TextBox6" runat="server"></asp:TextBox>
         </div>
         <div>
@@ -46,7 +46,7 @@
             Şifre:
             <asp:TextBox ID="TextBox10" runat="server"></asp:TextBox>
         </div>
+        <asp:Button CssClass=" btn btn-dark" ID="Button1" runat="server" Text="Kaydet" OnClick="Button1_Click" />
     </div>
-
 </asp:Content>
 
