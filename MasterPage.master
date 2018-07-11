@@ -24,77 +24,74 @@
             <a class="nav-item nav-link" href="#">Ücretler</a>
             <a class="nav-item nav-link" href="#">İletişim</a>
         </nav>
-        <div style="min-height: 50px">
+
+
+
+        <div class="row">
+        <div class="list-group col-sm-2" id="list-tab" role="tablist">
+
+            <h3><strong>&nbsp;&nbsp;&nbsp;İŞLEMLER</strong></h3>
+            <asp:Panel ID="Panel1" runat="server">
+                <a class="list-group-item list-group-item-action" href="Yetkilendirme.aspx">Yetkilendirme</a>
+            </asp:Panel>
+            <asp:Panel ID="Panel2" runat="server">
+                <a class="list-group-item list-group-item-action" href="reklam.aspx?n=ogrencibilgileri">Öğrenci Bilgileri</a>
+            </asp:Panel>
+            <asp:Panel ID="Panel3" runat="server">
+                <a class="list-group-item list-group-item-action" href="VeliBilgileri.aspx">Veli Bilgileri</a>
+            </asp:Panel>
+            <asp:Panel ID="Panel4" runat="server">
+                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle list-group-item list-group-item-action">Öğrenci Değerlendirme</a>
+            </asp:Panel>
+
+            <ul class="collapse list-unstyled" id="pageSubmenu">
+                <li>
+                    <asp:Panel ID="Panel5" runat="server">
+                        <a class="dropdown-item" href="reklam.aspx?n=ogrenciformekle">Form Ekle</a>
+                    </asp:Panel>
+                </li>
+                <li>
+                    <asp:Panel ID="Panel6" runat="server">
+                        <a class="dropdown-item" href="reklam.aspx?n=ogrencisonuclar">Sonuçlar</a>
+                    </asp:Panel>
+                </li>
+                <li>
+                    <asp:Panel ID="Panel7" runat="server">
+                        <a class="dropdown-item" href="reklam.aspx?n=ogrenciformdoldurma">Form Doldurma</a>
+                    </asp:Panel>
+                </li>
+            </ul>
+            <asp:Panel ID="Panel8" runat="server">
+                <a href="#pageSubmenu2" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle list-group-item list-group-item-action">Anket</a>
+            </asp:Panel>
+            <ul class="collapse list-unstyled" id="pageSubmenu2">
+                <li>
+                    <asp:Panel ID="Panel9" runat="server">
+                        <a class="dropdown-item" href="reklam.aspx?n=anketformekle">Form Ekle</a>
+                    </asp:Panel>
+                </li>
+                <li>
+                    <asp:Panel ID="Panel10" runat="server">
+                        <a class="dropdown-item" href="reklam.aspx?n=anketsonuclar">Sonuçlar</a>
+                    </asp:Panel>
+                </li>
+                <li>
+                    <asp:Panel ID="Panel11" runat="server">
+                        <a class="dropdown-item" href="reklam.aspx?n=anketegit">Ankete Git</a>
+                    </asp:Panel>
+                </li>
+            </ul>
+
+            <asp:Panel ID="Panel12" runat="server">
+                <a class="list-group-item list-group-item-action" href="reklam.aspx?n=yemeklistesi">Yemek Listesi</a>
+            </asp:Panel>
+        </div>
+        <div class="col-sm-6">
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
         </div>
-        <section id="sidebar">
-            <div class="wrapper" style="position: center">
-                <div class="row">
-                    <div>
-                        <asp:Menu ID="Menu1" runat="server">
-                        </asp:Menu>
-                        <div class="list-group" id="list-tab" role="tablist">
-                            <h3><strong>&nbsp;&nbsp;&nbsp;İŞLEMLER</strong></h3>
-                            <asp:Panel ID="Panel1" runat="server">
-                                <a class="list-group-item list-group-item-action" href="Yetkilendirme.aspx" >Yetkilendirme</a>
-                            </asp:Panel>
-                            <asp:Panel ID="Panel2" runat="server">
-                                <a class="list-group-item list-group-item-action" href="reklam.aspx?n=ogrencibilgileri">Öğrenci Bilgileri</a>
-                            </asp:Panel>
-                            <asp:Panel ID="Panel3" runat="server">
-                                <a class="list-group-item list-group-item-action" href="VeliBilgileri.aspx"> Veli Bilgileri</a>
-                            </asp:Panel>
-                            <asp:Panel ID="Panel4" runat="server">
-                                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle list-group-item list-group-item-action">Öğrenci Değerlendirme</a>
-                            </asp:Panel>
-                            
-                            <ul class="collapse list-unstyled" id="pageSubmenu">
-                                <li>
-                                    <asp:Panel ID="Panel5" runat="server">
-                                        <a class="dropdown-item" href="reklam.aspx?n=ogrenciformekle">Form Ekle</a>
-                                    </asp:Panel>
-                                </li>
-                                <li>
-                                    <asp:Panel ID="Panel6" runat="server">
-                                        <a class="dropdown-item" href="reklam.aspx?n=ogrencisonuclar">Sonuçlar</a>
-                                    </asp:Panel>
-                                </li>
-                                <li>
-                                    <asp:Panel ID="Panel7" runat="server">
-                                        <a class="dropdown-item" href="reklam.aspx?n=ogrenciformdoldurma">Form Doldurma</a>
-                                    </asp:Panel>
-                                </li>
-                            </ul>
-                            <asp:Panel ID="Panel8" runat="server">
-                                <a href="#pageSubmenu2" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle list-group-item list-group-item-action">Anket</a>
-                            </asp:Panel>
-                            <ul class="collapse list-unstyled" id="pageSubmenu2">
-                                <li>
-                                    <asp:Panel ID="Panel9" runat="server">
-                                        <a class="dropdown-item" href="reklam.aspx?n=anketformekle">Form Ekle</a>
-                                    </asp:Panel>
-                                </li>
-                                <li>
-                                    <asp:Panel ID="Panel10" runat="server">
-                                        <a class="dropdown-item" href="reklam.aspx?n=anketsonuclar">Sonuçlar</a>
-                                    </asp:Panel>
-                                </li>
-                                <li>
-                                    <asp:Panel ID="Panel11" runat="server">
-                                        <a class="dropdown-item" href="reklam.aspx?n=anketegit">Ankete Git</a>
-                                    </asp:Panel>
-                                </li>
-                            </ul>
+        </div>
 
-                            <asp:Panel ID="Panel12" runat="server">
-                                <a class="list-group-item list-group-item-action" href="reklam.aspx?n=yemeklistesi">Yemek Listesi</a>
-                            </asp:Panel>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
         <div style="min-height: 50px">
             <asp:ContentPlaceHolder ID="content1" runat="server">
             </asp:ContentPlaceHolder>
@@ -143,8 +140,8 @@
                             <li class="list-inline-item"><a href="javascript:void();" target="_blank"><i class="fa fa-envelope"></i></a></li>
                         </ul>
                     </div>
-                    
-	
+
+
                 </div>
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
