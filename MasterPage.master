@@ -37,7 +37,7 @@
                         <div class="list-group" id="list-tab" role="tablist">
                             <h3><strong>&nbsp;&nbsp;&nbsp;İŞLEMLER</strong></h3>
                             <asp:Panel ID="Panel1" runat="server">
-                                <a class="list-group-item list-group-item-action" href="reklam.aspx?n=yetkilendirme" >Yetkilendirme</a>
+                                <a class="list-group-item list-group-item-action" href="Yetkilendirme.aspx" >Yetkilendirme</a>
                             </asp:Panel>
                             <asp:Panel ID="Panel2" runat="server">
                                 <a class="list-group-item list-group-item-action" href="reklam.aspx?n=ogrencibilgileri">Öğrenci Bilgileri</a>
