@@ -33,23 +33,6 @@
     <div>
         Cep Telefonu: <asp:TextBox ID="TextBox9" runat="server"></asp:TextBox>
     </div>
-    <div>
-        Yakın 1 Adı: <asp:TextBox ID="TextBox10" runat="server"></asp:TextBox>
-    </div>
-    <div>
-        Yakın 1 Soyadı: <asp:TextBox ID="TextBox11" runat="server"></asp:TextBox>
-    </div>
-    <div>
-        Yakın 1 Telefonu: <asp:TextBox ID="TextBox12" runat="server"></asp:TextBox>
-    </div>
-    <div>
-        Yakın 2 Adı: <asp:TextBox ID="TextBox13" runat="server"></asp:TextBox>
-    </div>
-    <div>
-        Yakın 2 Soyadı: <asp:TextBox ID="TextBox14" runat="server"></asp:TextBox>
-    </div>
-    <div>
-        Yakın 2 Telefonu: <asp:TextBox ID="TextBox15" runat="server"></asp:TextBox>
-    </div>
+   
 </asp:Content>
 
