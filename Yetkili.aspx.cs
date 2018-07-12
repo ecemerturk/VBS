@@ -11,6 +11,10 @@ using System.Configuration;
 using System.Collections;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
+using System.ComponentModel;
+using System.Drawing;
+using System.Text;
+using System.Threading.Tasks;
 using sqlQuery;
 
 public partial class Default2 : System.Web.UI.Page
@@ -51,9 +55,11 @@ public partial class Default2 : System.Web.UI.Page
             query1 += nl + "WHERE K.KISI_AD LIKE '"+TextBox11.Text+"' AND K.KISI_ID=Y.YETKILI_ID";
             SqlQuery sqlquery = new SqlQuery();
             DataTable datatable = sqlquery.Query(query1);
-
             GridView1.DataSource = datatable;
             GridView1.DataBind();
+
+
+
 
             //for (int i = 0; i < datatable.Rows.Count; i++)
             //{
@@ -68,7 +74,7 @@ public partial class Default2 : System.Web.UI.Page
             //    }
             //    Table1.Rows.Add(satir);
             //}
-            
+
         }
         else if(DropDownList1.SelectedValue.ToString() == "Tc Kimlik Numarası")
         {
@@ -121,5 +127,22 @@ public partial class Default2 : System.Web.UI.Page
             //    Table1.Rows.Add(satir);
             //}
         }
+           
+
     }
+
+
+
+    protected void Button3_Click(object sender, EventArgs e )
+    {
+
+        Button btn = (Button)sender;
+
+        GridViewRow gvr = (GridViewRow)btn.NamingContainer;
+
+        Session.Add("secilen", gvr.ToString());
+        string a = GridView1.Rows[GridView1.SelectedIndex].ToString();
+        Session.Add("secilen", a);
+    }
+
 }
