@@ -134,22 +134,26 @@ public partial class Default2 : System.Web.UI.Page
 
     protected void Button3_Click(object sender, EventArgs e)
     {
+        Button gelen = (Button)sender;
+        string gelenbuton = gelen.CommandName;
+        string gelendeger = gelen.CommandArgument;
+        Session.Add("secilen", gelendeger);
         GridView1.DataBind();
-        
+        Response.Redirect("BulunanYetkili.aspx");
     }
-    public class CustomDataSource
-    {
-        public class Model
-        {
-            public string Name { get; set; }
-        }
+    //public class CustomDataSource
+    //{
+    //    public class Model
+    //    {
+    //        public string Name { get; set; }
+    //    }
 
-        public IEnumerable<Model> Select()
-        {
-            return new[]
-            {
-            new Model { Name = "KISI_AD" }
-        };
-        }
-    }
+    //    public IEnumerable<Model> Select()
+    //    {
+    //        return new[]
+    //        {
+    //        new Model { Name = "KISI_AD" }
+    //    };
+    //    }
+    //}
 }

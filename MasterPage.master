@@ -18,7 +18,7 @@
     <form id="form1" runat="server">
         <nav class="navbar navbar-dark" style="background-color: darkslategrey;">
             <a class="navbar-brand" href="#">Yumurcak Anaokulu</a>
-            <a class="nav-item nav-link active" href="#">Giriş <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link active" href="LoginForDb.aspx">Giriş <span class="sr-only">(current)</span></a>
             <a class="nav-item nav-link" href="#">Misyonumuz</a>
             <a class="nav-item nav-link" href="#">Kadromuz</a>
             <a class="nav-item nav-link" href="#">Ücretler</a>

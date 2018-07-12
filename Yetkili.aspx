@@ -125,7 +125,7 @@
                     <Columns>
                         <asp:TemplateField>
                             <ItemTemplate>
-                                <asp:Button ID="Button3" runat="server" Text='<%#Bind("KISI_AD")%>'  OnClick="Button3_Click" PostBackUrl="~/Default2.aspx"/>
+                                <asp:Button ID="Button3" runat="server" Text="Görüntüle"  OnClick="Button3_Click" CommandName="Görüntüle" CommandArgument='<%#Bind("KISI_ID")%>'/>
                             </ItemTemplate>
                         </asp:TemplateField>
                     </Columns>
