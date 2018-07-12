@@ -20,7 +20,7 @@
                 <a>T.C. Kimlik Numarası:</a>
             </div>
             <div class="col-sm-3">
-                <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+                <asp:TextBox ID="TextBox2" runat="server" ></asp:TextBox>
             </div>
         </div>
 

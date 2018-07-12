@@ -38,7 +38,8 @@ public partial class Default2 : System.Web.UI.Page
         TextBox7.Text = datatable.Rows[0][6].ToString();
         TextBox8.Text = datatable.Rows[0][7].ToString();
         TextBox9.Text = datatable.Rows[0][8].ToString();
-
+        TextBox1.ReadOnly = true;
+        TextBox2.ReadOnly = true;
     }
 
     protected void Button1_Click(object sender, EventArgs e)
