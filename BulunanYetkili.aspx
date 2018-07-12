@@ -80,14 +80,7 @@
                 <asp:TextBox ID="TextBox9" runat="server"></asp:TextBox>
             </div>
         </div>
-        <div class="row">
-            <div class="col-sm-4">
-                <a>Şifre:</a>
-            </div>
-            <div class="col-sm-3">
-                <asp:TextBox ID="TextBox10" runat="server"></asp:TextBox>
-            </div>
-        </div>
+        
         <div class="row">
             <div class="col-sm-4"></div>
             <div class="col-sm-4">
