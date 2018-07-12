@@ -29,9 +29,9 @@ public partial class Default2 : System.Web.UI.Page
         string query = "";
         string nl = System.Environment.NewLine;
         query += nl + "INSERT INTO KISI (KISI_ID,KISI_TC,KISI_AD,KISI_SOYAD,KISI_DOGUM,KISI_KGRUBU)";
-        query += nl + "VALUES ('"+TextBox1.Text+"','"+TextBox2.Text+"','"+TextBox3.Text+"','"+TextBox4.Text+"','"+TextBox5.Text+"','"+TextBox6.Text+"')";
+        query += nl + "VALUES ('" + TextBox1.Text + "','" + TextBox2.Text + "','" + TextBox3.Text + "','" + TextBox4.Text + "','" + TextBox5.Text + "','" + TextBox6.Text + "')";
         query += nl + "INSERT INTO YETKILI (YETKILI_ID,YETKILI_MAIL,YETKILI_TELEFON,YETKILI_BRANS,YETKILI_SIFRE)";
-        query += nl + "VALUES ('"+TextBox1.Text+"','"+TextBox7.Text+"','"+TextBox8.Text+"','"+TextBox9.Text+"','"+TextBox10.Text+"')";
+        query += nl + "VALUES ('" + TextBox1.Text + "','" + TextBox7.Text + "','" + TextBox8.Text + "','" + TextBox9.Text + "','" + TextBox10.Text + "')";
 
         SqlQuery sqlquery = new SqlQuery();
         DataTable datatable = sqlquery.Query(query);
@@ -43,16 +43,16 @@ public partial class Default2 : System.Web.UI.Page
         string secilen = DropDownList1.SelectedValue;
     }
 
-   protected void Button2_Click(object sender, EventArgs e)
+    protected void Button2_Click(object sender, EventArgs e)
     {
         string query1 = "";
         string query2 = "";
         string query3 = "";
         string nl = System.Environment.NewLine;
-        if (DropDownList1.SelectedValue.ToString()== "İsim")
+        if (DropDownList1.SelectedValue.ToString() == "İsim")
         {
             query1 += nl + "SELECT K.KISI_AD, K.KISI_SOYAD, K.KISI_ID, K.KISI_TC FROM YETKILI Y, KISI K";
-            query1 += nl + "WHERE K.KISI_AD LIKE '"+TextBox11.Text+"' AND K.KISI_ID=Y.YETKILI_ID";
+            query1 += nl + "WHERE K.KISI_AD LIKE '" + TextBox11.Text + "' AND K.KISI_ID=Y.YETKILI_ID";
             SqlQuery sqlquery = new SqlQuery();
             DataTable datatable = sqlquery.Query(query1);
             GridView1.DataSource = datatable;
@@ -76,7 +76,7 @@ public partial class Default2 : System.Web.UI.Page
             //}
 
         }
-        else if(DropDownList1.SelectedValue.ToString() == "Tc Kimlik Numarası")
+        else if (DropDownList1.SelectedValue.ToString() == "Tc Kimlik Numarası")
         {
 
             query2 += nl + "";
@@ -127,22 +127,29 @@ public partial class Default2 : System.Web.UI.Page
             //    Table1.Rows.Add(satir);
             //}
         }
-           
+
 
     }
 
 
-
-    protected void Button3_Click(object sender, EventArgs e )
+    protected void Button3_Click(object sender, EventArgs e)
     {
-
-        Button btn = (Button)sender;
-
-        GridViewRow gvr = (GridViewRow)btn.NamingContainer;
-
-        Session.Add("secilen", gvr.ToString());
-        string a = GridView1.Rows[GridView1.SelectedIndex].ToString();
-        Session.Add("secilen", a);
+        GridView1.DataBind();
+        
     }
+    public class CustomDataSource
+    {
+        public class Model
+        {
+            public string Name { get; set; }
+        }
 
+        public IEnumerable<Model> Select()
+        {
+            return new[]
+            {
+            new Model { Name = "KISI_AD" }
+        };
+        }
+    }
 }

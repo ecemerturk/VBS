@@ -125,7 +125,7 @@
                     <Columns>
                         <asp:TemplateField>
                             <ItemTemplate>
-                                <asp:Button ID="Button3" runat="server" Text="Görüntüle"  OnClick="Button3_Click" PostBackUrl="~/Default2.aspx" CommandName="Data" />
+                                <asp:Button ID="Button3" runat="server" Text='<%#Bind("KISI_AD")%>'  OnClick="Button3_Click" PostBackUrl="~/Default2.aspx"/>
                             </ItemTemplate>
                         </asp:TemplateField>
                     </Columns>
@@ -138,11 +138,18 @@
                     <SortedAscendingHeaderStyle BackColor="#487575" />
                     <SortedDescendingCellStyle BackColor="#E5E5E5" />
                     <SortedDescendingHeaderStyle BackColor="#275353" />
+
                 </asp:GridView>
             </div>
         </div>
 
     </div>
+    <asp:ObjectDataSource 
+        ID="mySource" 
+        runat="server"
+        SelectMethod="Select" 
+        UpdateMethod="Update" 
+        TypeName="MyCompany.CustomDataSource" />
     <br /><br /><br />
 </asp:Content>
 
