@@ -99,5 +99,33 @@
 
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="content1" runat="Server">
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <div class="offset-sm-2">
+        <div class="row">
+            <div class="col-sm-2">
+                <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True" >
+                    <asp:ListItem>Sistem Numarası</asp:ListItem>
+                    <asp:ListItem>Tc Kimlik Numarası</asp:ListItem>
+                    <asp:ListItem>İsim</asp:ListItem>
+                </asp:DropDownList>
+            </div>
+            <div class="col-sm-3">
+                <asp:TextBox ID="TextBox11" runat="server" ToolTip="% kullanarak 0 veya daha çok içerme durumunu ekler, _ tek karakteri belirtir"></asp:TextBox>
+            </div>
+            <div class="col-sm-1">
+                <asp:Button ID="Button2" runat="server" Text="Ara" OnClick="Button2_Click" />
+            </div>
+            <div class="col-sm-3">
+                <asp:GridView ID="GridView1" runat="server"></asp:GridView>
+            </div>
+        </div>
+
+    </div>
+    <br /><br /><br />
 </asp:Content>
 
