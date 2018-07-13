@@ -29,9 +29,9 @@ public partial class Default2 : System.Web.UI.Page
         string query = "";
         string nl = System.Environment.NewLine;
         query += nl + "INSERT INTO KISI (KISI_ID,KISI_TC,KISI_AD,KISI_SOYAD,KISI_DOGUM,KISI_KGRUBU)";
-        query += nl + "VALUES ('" + TextBox1.Text + "','" + TextBox2.Text + "','" + TextBox3.Text + "','" + TextBox4.Text + "','" + TextBox5.Text + "','" + TextBox6.Text + "')";
+        query += nl + "VALUES ('" + TextID.Text + "','" + TextTC.Text + "','" + TextAd.Text + "','" + TextSoyad.Text + "','" + TextDogum.Text + "','" + TextKan.Text + "')";
         query += nl + "INSERT INTO YETKILI (YETKILI_ID,YETKILI_MAIL,YETKILI_TELEFON,YETKILI_BRANS,YETKILI_SIFRE)";
-        query += nl + "VALUES ('" + TextBox1.Text + "','" + TextBox7.Text + "','" + TextBox8.Text + "','" + TextBox9.Text + "','" + TextBox10.Text + "')";
+        query += nl + "VALUES ('" + TextID.Text + "','" + TextMail.Text + "','" + TextTel.Text + "','" + TextBrans.Text + "','" + TextSifre.Text + "')";
 
         SqlQuery sqlquery = new SqlQuery();
         DataTable datatable = sqlquery.Query(query);
@@ -52,7 +52,7 @@ public partial class Default2 : System.Web.UI.Page
         if (DropDownList1.SelectedValue.ToString() == "İsim")
         {
             query1 += nl + "SELECT K.KISI_AD, K.KISI_SOYAD, K.KISI_ID, K.KISI_TC FROM YETKILI Y, KISI K";
-            query1 += nl + "WHERE K.KISI_AD LIKE '" + TextBox11.Text + "' AND K.KISI_ID=Y.YETKILI_ID";
+            query1 += nl + "WHERE K.KISI_AD LIKE '" + TextAra.Text + "' AND K.KISI_ID=Y.YETKILI_ID";
             SqlQuery sqlquery = new SqlQuery();
             DataTable datatable = sqlquery.Query(query1);
             GridView1.DataSource = datatable;
@@ -81,7 +81,7 @@ public partial class Default2 : System.Web.UI.Page
 
             query2 += nl + "";
             query2 += nl + "SELECT K.KISI_AD, K.KISI_SOYAD, K.KISI_ID, K.KISI_TC FROM YETKILI Y, KISI K";
-            query2 += nl + "WHERE K.KISI_TC LIKE '" + TextBox11.Text + "' AND K.KISI_ID=Y.YETKILI_ID";
+            query2 += nl + "WHERE K.KISI_TC LIKE '" + TextAra.Text + "' AND K.KISI_ID=Y.YETKILI_ID";
             SqlQuery sqlquery = new SqlQuery();
             DataTable datatable = sqlquery.Query(query2);
 
@@ -106,7 +106,7 @@ public partial class Default2 : System.Web.UI.Page
         {
             query3 += nl + "";
             query3 += nl + "SELECT K.KISI_AD, K.KISI_SOYAD, K.KISI_ID, K.KISI_TC FROM YETKILI Y, KISI K";
-            query3 += nl + "WHERE K.KISI_ID LIKE '" + TextBox11.Text + "' AND K.KISI_ID=Y.YETKILI_ID";
+            query3 += nl + "WHERE K.KISI_ID LIKE '" + TextAra.Text + "' AND K.KISI_ID=Y.YETKILI_ID";
             SqlQuery sqlquery = new SqlQuery();
             DataTable datatable = sqlquery.Query(query3);
 

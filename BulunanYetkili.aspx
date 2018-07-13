@@ -12,7 +12,7 @@
                 <a>Kişi Numarası:</a>
             </div>
             <div class="col-sm-3">
-                <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                <asp:TextBox ID="TextID" runat="server"></asp:TextBox>
             </div>
         </div>
         <div class="row">
@@ -20,7 +20,7 @@
                 <a>T.C. Kimlik Numarası:</a>
             </div>
             <div class="col-sm-3">
-                <asp:TextBox ID="TextBox2" runat="server" ></asp:TextBox>
+                <asp:TextBox ID="TextTC" runat="server" ></asp:TextBox>
             </div>
         </div>
 
@@ -29,7 +29,7 @@
                 <a>Adı:</a>
             </div>
             <div class="col-sm-3">
-                <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+                <asp:TextBox ID="TextAd" runat="server"></asp:TextBox>
             </div>
         </div>
         <div class="row">
@@ -37,7 +37,7 @@
                 <a>Soyadı:</a>
             </div>
             <div class="col-sm-3">
-                <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
+                <asp:TextBox ID="TextSoyad" runat="server"></asp:TextBox>
             </div>
         </div>
         <div class="row">
@@ -45,7 +45,7 @@
                 <a>Doğum Tarihi:</a>
             </div>
             <div class="col-sm-3">
-                <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
+                <asp:TextBox ID="TextDogum" runat="server"></asp:TextBox>
             </div>
         </div>
         <div class="row">
@@ -53,7 +53,7 @@
                 <a>Kan Grubu:</a>
             </div>
             <div class="col-sm-3">
-                <asp:TextBox ID="TextBox6" runat="server"></asp:TextBox>
+                <asp:TextBox ID="TextKan" runat="server"></asp:TextBox>
             </div>
         </div>
         <div class="row">
@@ -61,7 +61,7 @@
                 <a>E-mail:</a>
             </div>
             <div class="col-sm-3">
-                <asp:TextBox ID="TextBox7" runat="server"></asp:TextBox>
+                <asp:TextBox ID="TextMail" runat="server"></asp:TextBox>
             </div>
         </div>
         <div class="row">
@@ -69,7 +69,7 @@
                 <a>Telefon Numarası:</a>
             </div>
             <div class="col-sm-3">
-                <asp:TextBox ID="TextBox8" runat="server"></asp:TextBox>
+                <asp:TextBox ID="TextTel" runat="server"></asp:TextBox>
             </div>
         </div>
         <div class="row">
@@ -77,15 +77,15 @@
                 <a>Branş:</a>
             </div>
             <div class="col-sm-3">
-                <asp:TextBox ID="TextBox9" runat="server"></asp:TextBox>
+                <asp:TextBox ID="TextBrans" runat="server"></asp:TextBox>
             </div>
         </div>
         
         <div class="row">
             <div class="col-sm-4"></div>
             <div class="col-sm-4">
-                <asp:Button CssClass=" btn btn-primary" ID="Button1" runat="server" Text="Düzenle" OnClick="Button1_Click"  />
-                <asp:Button CssClass=" btn btn-danger" ID="Button2" runat="server" Text="Sil" OnClick="Button2_Click" />
+                <asp:Button CssClass=" btn btn-primary" ID="ButtonDuzenle" runat="server" Text="Düzenle" OnClick="ButtonDuzenle_Click"  />
+                <asp:Button CssClass=" btn btn-danger" ID="ButtonSil" runat="server" Text="Sil" OnClick="ButtonSil_Click" />
             </div>
         </div>
 
