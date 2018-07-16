@@ -3,8 +3,9 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-</asp:Content>
-<asp:Content ID="Content3" ContentPlaceHolderID="content1" runat="Server">
+    <br />
+    <br />
+    <br />
     <div class=" offset-md-3 align-content-center">
         <div class="row">
             <div class="col-sm-4">
@@ -94,5 +95,59 @@
             </div>
         </div>
     </div>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="content1" runat="Server">
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <div class="offset-sm-2">
+        <div class="row">
+            <div class="col-sm-2">
+                <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True" >
+                    <asp:ListItem>Sistem Numarası</asp:ListItem>
+                    <asp:ListItem>Tc Kimlik Numarası</asp:ListItem>
+                    <asp:ListItem>İsim</asp:ListItem>
+                </asp:DropDownList>
+            </div>
+            <div class="col-sm-3">
+                <asp:TextBox ID="TextAra" runat="server" ToolTip="% kullanarak 0 veya daha çok içerme durumunu ekler, _ tek karakteri belirtir"></asp:TextBox>
+            </div>
+            <div class="col-sm-1">
+                <asp:Button ID="Button1" runat="server" Text="Ara" OnClick="Button2_Click" />
+            </div>
+            <div class="col-sm-3">
+                <asp:GridView ID="GridView1"  runat="server" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" GridLines="Horizontal"  >
+                    <Columns>
+                        <asp:TemplateField>
+                            <ItemTemplate>
+                                <asp:Button ID="Button3" runat="server" Text="Görüntüle"  OnClick="Button3_Click" CommandName="Görüntüle" CommandArgument='<%#Bind("KISI_ID")%>'/>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                    </Columns>
+                    <FooterStyle BackColor="White" ForeColor="#333333" />
+                    <HeaderStyle BackColor="#336666" Font-Bold="True" ForeColor="White" />
+                    <PagerStyle BackColor="#336666" ForeColor="White" HorizontalAlign="Center" />
+                    <RowStyle BackColor="White" ForeColor="#333333" />
+                    <SelectedRowStyle BackColor="#339966" Font-Bold="True" ForeColor="White" />
+                    <SortedAscendingCellStyle BackColor="#F7F7F7" />
+                    <SortedAscendingHeaderStyle BackColor="#487575" />
+                    <SortedDescendingCellStyle BackColor="#E5E5E5" />
+                    <SortedDescendingHeaderStyle BackColor="#275353" />
+
+                </asp:GridView>
+            </div>
+        </div>
+
+    </div>
+    <asp:ObjectDataSource 
+        ID="mySource" 
+        runat="server"
+        SelectMethod="Select" 
+        UpdateMethod="Update" 
+        TypeName="MyCompany.CustomDataSource" />
+    <br /><br /><br />
 </asp:Content>
 
