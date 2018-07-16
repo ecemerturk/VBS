@@ -30,7 +30,7 @@ public partial class Default2 : System.Web.UI.Page
     {
         string query = "";
         string nl = System.Environment.NewLine;
-        query += nl + "SELECT K.KISI_ID, K.KISI_TC, K.KISI_AD, K.KISI_SOYAD, K.KISI_DOGUM, K.KISI_KGRUBU, O.OGRETMEN_MAIL, O.OGRETMEN_TELEFON, O.OGRETMEN_BRANS";
+        query += nl + "SELECT K.KISI_ID, K.KISI_TC, K.KISI_AD, K.KISI_SOYAD, K.KISI_DOGUM, K.KISI_KGRUBU, O.OGRETMEN_MAIL, O.OGRETMEN_TEL, O.OGRETMEN_BRANS";
         query += nl + "FROM KISI K, OGRETMEN O";
         query += nl + "WHERE K.KISI_ID='" + Session["secilen"] + "' AND K.KISI_ID = O.OGRETMEN_ID";
 
@@ -56,7 +56,7 @@ public partial class Default2 : System.Web.UI.Page
         query1 += nl + "SET KISI_AD='" + TextAd.Text + "', KISI_SOYAD='" + TextSoyad.Text + "', KISI_DOGUM='" + TextDogum.Text + "', KISI_KGRUBU='" + TextKan.Text + "'";
         query1 += nl + "WHERE KISI_ID='" + Session["secilen"] + "'";
         query1 += nl + "UPDATE OGRETMEN";
-        query1 += nl + "SET OGRETMEN_MAIL='" + TextMail.Text + "', OGRETMEN_TELEFON='" + TextTel.Text + "', OGRETMEN_BRANS='" + TextBrans.Text + "' ";
+        query1 += nl + "SET OGRETMEN_MAIL='" + TextMail.Text + "', OGRETMEN_TEL='" + TextTel.Text + "', OGRETMEN_BRANS='" + TextBrans.Text + "' ";
         query1 += nl + "WHERE OGRETMEN_ID='" + Session["secilen"] + "'";
 
         SqlQuery sqlquery1 = new SqlQuery();
