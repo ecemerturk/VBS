@@ -53,8 +53,6 @@ public partial class Default2 : System.Web.UI.Page
     }
     protected void ButtonDuzenle_Click(object sender, EventArgs e)
     {
-
-
         string query1 = "";
         string nl = System.Environment.NewLine;
         query1 += nl + "UPDATE KISI";
@@ -72,6 +70,13 @@ public partial class Default2 : System.Web.UI.Page
 
     protected void ButtonSil_Click(object sender, EventArgs e)
     {
-
+        string query2 = "";
+        string nl = System.Environment.NewLine;
+        query2 += nl + "UPDATE OKUL_KISI";
+        query2 += nl + "SET OKUL_ID=0";
+        query2 += nl + "WHERE KISI_ID = "+Session["secilen"]+"";
+        SqlQuery sqlquery2 = new SqlQuery();
+        DataTable datatable2 = sqlquery2.Query(query2);
+        Response.Redirect("BulunanYetkili.aspx");
     }
 }
