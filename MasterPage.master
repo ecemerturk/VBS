@@ -35,7 +35,7 @@
                 <a class="list-group-item list-group-item-action" href="Yetkilendirme.aspx">Yetkilendirme</a>
             </asp:Panel>
             <asp:Panel ID="Panel2" runat="server">
-                <a class="list-group-item list-group-item-action" href="reklam.aspx?n=ogrencibilgileri">Öğrenci Bilgileri</a>
+                <a class="list-group-item list-group-item-action" href="OgrenciBilgileri.aspx">Öğrenci Bilgileri</a>
             </asp:Panel>
             <asp:Panel ID="Panel3" runat="server">
                 <a class="list-group-item list-group-item-action" href="VeliBilgileri.aspx">Veli Bilgileri</a>
