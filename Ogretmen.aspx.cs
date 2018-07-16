@@ -82,6 +82,6 @@ public partial class Default2 : System.Web.UI.Page
         string gelendeger = gelen.CommandArgument;
         Session.Add("secilen", gelendeger);
         GridView1.DataBind();
-        Response.Redirect("BulunanYetkili.aspx");
+        Response.Redirect("BulunanOgretmen.aspx");
     }
 }
