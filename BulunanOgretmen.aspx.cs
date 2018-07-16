@@ -17,7 +17,7 @@ using System.Text;
 using System.Threading.Tasks;
 using sqlQuery;
 
-public partial class Default2 : System.Web.UI.Page
+public partial class BulunanOgretmen : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
