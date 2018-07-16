@@ -30,9 +30,9 @@ public partial class BulunanOgretmen : System.Web.UI.Page
     {
         string query = "";
         string nl = System.Environment.NewLine;
-        query += nl + "SELECT K.KISI_ID, K.KISI_TC, K.KISI_AD, K.KISI_SOYAD, K.KISI_DOGUM, K.KISI_KGRUBU, O.OGRETMEN_MAIL, O.OGRETMEN_TEL, O.OGRETMEN_BRANS";
-        query += nl + "FROM KISI K, OGRETMEN O";
-        query += nl + "WHERE K.KISI_ID='" + Session["secilen"] + "' AND K.KISI_ID = O.OGRETMEN_ID";
+        query += nl + "SELECT K.KISI_ID, K.KISI_TC, K.KISI_AD, K.KISI_SOYAD, K.KISI_DOGUM, K.KISI_KGRUBU, OG.OGRETMEN_MAIL, OG.OGRETMEN_TEL, OG.OGRETMEN_BRANS";
+        query += nl + "FROM KISI K, OGRETMEN OG";
+        query += nl + "WHERE K.KISI_ID='" + Session["secilen"] + "' AND K.KISI_ID = OG.OGRETMEN_ID";
 
         SqlQuery sqlquery = new SqlQuery();
         DataTable datatable = sqlquery.Query(query);
@@ -48,7 +48,6 @@ public partial class BulunanOgretmen : System.Web.UI.Page
         TextID.ReadOnly = true;
         TextTC.ReadOnly = true;
     }
-
     protected void ButtonDuzenle_Click(object sender, EventArgs e)
     {
         string query1 = "";
@@ -57,12 +56,15 @@ public partial class BulunanOgretmen : System.Web.UI.Page
         query1 += nl + "SET KISI_AD='" + TextAd.Text + "', KISI_SOYAD='" + TextSoyad.Text + "', KISI_DOGUM='" + TextDogum.Text + "', KISI_KGRUBU='" + TextKan.Text + "'";
         query1 += nl + "WHERE KISI_ID='" + Session["secilen"] + "'";
         query1 += nl + "UPDATE OGRETMEN";
-        query1 += nl + "SET OGRETMEN_MAIL='" + TextMail.Text + "', OGRETMEN_TEL='" + TextTel.Text + "', OGRETMEN_BRANS='" + TextBrans.Text + "' ";
+        query1 += nl + "SET OGRETMEN_MAIL='" + TextMail.Text + "', OGRETMEN_TEL ='" + TextTel.Text + "', OGRETMEN_BRANS='" + TextBrans.Text + "'";
         query1 += nl + "WHERE OGRETMEN_ID='" + Session["secilen"] + "'";
 
         SqlQuery sqlquery1 = new SqlQuery();
         DataTable datatable1 = sqlquery1.Query(query1);
+
+
     }
+
     protected void ButtonSil_Click(object sender, EventArgs e)
     {
         string query2 = "";
