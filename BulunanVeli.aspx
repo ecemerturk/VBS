@@ -96,14 +96,7 @@
                 <asp:TextBox ID="TextCepTel" runat="server"></asp:TextBox>
             </div>
         </div>
-        <div class="row">
-            <div class="col-sm-4">
-                <a>Veli Sifre:</a>
-            </div>
-            <div class="col-sm-3">
-                <asp:TextBox ID="TextSıfre" runat="server"></asp:TextBox>
-            </div>
-        </div>
+        
         <div class="row">
             <div class="col-sm-4"></div>
             <div class="col-sm-4">

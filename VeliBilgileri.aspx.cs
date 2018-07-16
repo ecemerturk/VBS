@@ -29,7 +29,7 @@ public partial class VeliBilgileri : System.Web.UI.Page
         string nl = System.Environment.NewLine;
         query += nl + "INSERT INTO KISI (KISI_ID,KISI_TC,KISI_AD,KISI_SOYAD,KISI_DOGUM,KISI_KGRUBU)";
         query += nl + "VALUES ('" + TextID.Text + "','" + TextTC.Text + "','" + TextAd.Text + "','" + TextSoyad.Text + "','" + TextDogum.Text + "','" + TextKan.Text + "')";
-        query += nl + "INSERT INTO VELI (VELI_ID,VELI_MAIL,VELI_HASTALIK,VELI_MESLEGI,VELI_EVTEL,VELI_ISTEL,VELI_CEPTEL,VELI_SIFRE)";
+        query += nl + "INSERT INTO VELI (VELI_ID,VELI_MAIL,VELI_MESLEGI,VELI_EVTEL,VELI_ISTEL,VELI_CEPTEL,VELI_SIFRE)";
         query += nl + "VALUES ('" + TextID.Text + "','" + TextMail.Text + "','" + TextMeslek.Text + "','" + TextEvTel.Text + "','" + TextIsTel.Text + "','" + TextCepTel.Text + "','" + TextSıfre.Text + "')";
 
         SqlQuery sqlquery = new SqlQuery();

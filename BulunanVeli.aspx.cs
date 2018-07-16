@@ -59,7 +59,7 @@ public partial class BulunanVeli : System.Web.UI.Page
         query1 += nl + "WHERE KISI_ID='" + Session["secilen"] + "'";
         query1 += nl + "UPDATE VELI";
         query1 += nl + "SET VELI_MAIL='" + TextMail.Text + "', VELI_MESLEGI ='" + TextMeslek.Text + "', VELI_EVTEL='" + TextEvTel.Text + "', VELI_ISTEL='" + TextIsTel.Text + "', VELI_CEPTEL='" + TextCepTel.Text + "'";
-        query1 += nl + "WHERE OGRENCI_ID='" + Session["secilen"] + "'";
+        query1 += nl + "WHERE VELI_ID='" + Session["secilen"] + "'";
 
         SqlQuery sqlquery1 = new SqlQuery();
         DataTable datatable1 = sqlquery1.Query(query1);

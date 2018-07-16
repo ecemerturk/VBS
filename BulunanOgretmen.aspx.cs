@@ -48,6 +48,7 @@ public partial class Default2 : System.Web.UI.Page
         TextID.ReadOnly = true;
         TextTC.ReadOnly = true;
     }
+
     protected void ButtonDuzenle_Click(object sender, EventArgs e)
     {
         string query1 = "";
