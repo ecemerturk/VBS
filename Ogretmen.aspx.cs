@@ -44,8 +44,8 @@ public partial class Ogretmen : System.Web.UI.Page
         string nl = System.Environment.NewLine;
         if (DropDownList1.SelectedValue.ToString() == "İsim")
         {
-            query1 += nl + "SELECT K.KISI_AD, K.KISI_SOYAD, K.KISI_ID, K.KISI_TC FROM OGRETMEN O, KISI K";
-            query1 += nl + "WHERE K.KISI_AD LIKE '" + TextAra.Text + "' AND K.KISI_ID=O.OGRETMEN_ID";
+            query1 += nl + "SELECT K.KISI_AD, K.KISI_SOYAD, K.KISI_ID, K.KISI_TC FROM OGRETMEN OG, KISI K";
+            query1 += nl + "WHERE K.KISI_AD LIKE '" + TextAra.Text + "' AND K.KISI_ID=OG.OGRETMEN_ID";
             SqlQuery sqlquery = new SqlQuery();
             DataTable datatable = sqlquery.Query(query1);
             GridView1.DataSource = datatable;
@@ -55,8 +55,8 @@ public partial class Ogretmen : System.Web.UI.Page
         {
 
             query2 += nl + "";
-            query2 += nl + "SELECT K.KISI_AD, K.KISI_SOYAD, K.KISI_ID, K.KISI_TC FROM OGRETMEN O, KISI K";
-            query2 += nl + "WHERE K.KISI_TC LIKE '" + TextAra.Text + "' AND K.KISI_ID=O.OGRETMEN_ID";
+            query2 += nl + "SELECT K.KISI_AD, K.KISI_SOYAD, K.KISI_ID, K.KISI_TC FROM OGRETMEN OG, KISI K";
+            query2 += nl + "WHERE K.KISI_TC LIKE '" + TextAra.Text + "' AND K.KISI_ID=OG.OGRETMEN_ID";
             SqlQuery sqlquery = new SqlQuery();
             DataTable datatable = sqlquery.Query(query2);
 
@@ -66,8 +66,8 @@ public partial class Ogretmen : System.Web.UI.Page
         else if (DropDownList1.SelectedValue.ToString() == "Sistem Numarası")
         {
             query3 += nl + "";
-            query3 += nl + "SELECT K.KISI_AD, K.KISI_SOYAD, K.KISI_ID, K.KISI_TC FROM OGRETMEN O, KISI K";
-            query3 += nl + "WHERE K.KISI_ID LIKE '" + TextAra.Text + "' AND K.KISI_ID=O.OGRETMEN_ID";
+            query3 += nl + "SELECT K.KISI_AD, K.KISI_SOYAD, K.KISI_ID, K.KISI_TC FROM OGRETMEN OG, KISI K";
+            query3 += nl + "WHERE K.KISI_ID LIKE '" + TextAra.Text + "' AND K.KISI_ID=OG.OGRETMEN_ID";
             SqlQuery sqlquery = new SqlQuery();
             DataTable datatable = sqlquery.Query(query3);
 
