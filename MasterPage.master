@@ -47,7 +47,7 @@
             <ul class="collapse list-unstyled" id="pageSubmenu">
                 <li>
                     <asp:Panel ID="Panel5" runat="server">
-                        <a class="dropdown-item" href="reklam.aspx?n=ogrenciformekle">Form Ekle</a>
+                        <a class="dropdown-item" href="DinamikKontrol.aspx">Form Ekle</a>
                     </asp:Panel>
                 </li>
                 <li>
