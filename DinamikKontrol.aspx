@@ -9,7 +9,7 @@
         <td><b>Control Type</b></td>
         <td>
             <asp:CheckBoxList ID="chkBoxListControlType" runat="server" RepeatDirection="Horizontal">
-                <asp:ListItem Text="Label" Value="Label"></asp:ListItem>
+                <asp:ListItem Text="TextBox" Value="TextBox"></asp:ListItem>
                 <asp:ListItem Text="TextBox" Value="TextBox"></asp:ListItem>
                 <asp:ListItem Text="Button" Value="Button"></asp:ListItem>
             </asp:CheckBoxList>
@@ -25,15 +25,13 @@
     </tr>
     <tr>
         <td colspan="5">
-            <h3>Label Controls</h3>
+            <h3>TextBox Controls</h3>
         </td>
     </tr>
     <tr>
-        <td colspan="5" id="tdLabels" runat="server">
-            <asp:Panel ID="pnlLabels" runat="server">
+        <td colspan="5" id="tdTextBox" runat="server">
+            <asp:Panel ID="pnlTextBox" runat="server">
             </asp:Panel>
-            <%--<asp:PlaceHolder ID="phLabels" runat="server">
-            </asp:PlaceHolder>--%>
         </td>
     </tr>
     <tr>
@@ -45,8 +43,6 @@
         <td colspan="5" id="tdTextBoxes" runat="server">
             <asp:Panel ID="pnlTextBoxes" runat="server">
             </asp:Panel>
-            <%--<asp:PlaceHolder ID="phTextBoxes" runat="server">
-            </asp:PlaceHolder>--%>
         </td>
     </tr>
     <tr>
@@ -58,8 +54,6 @@
         <td colspan="5" id="tdButtons" runat="server">
             <asp:Panel ID="pnlButtons" runat="server">
             </asp:Panel>
-            <%--<asp:PlaceHolder ID="phButtons" runat="server">
-            </asp:PlaceHolder>--%>
         </td>
     </tr>
     </table>        
