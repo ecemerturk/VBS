@@ -94,14 +94,15 @@ public partial class Default2 : System.Web.UI.Page
 
         foreach (DataRow satir in datam.Rows)
         {
+
             if (AktifSoruId != satir["soruid"].ToString())
             {
                 HtmlGenericControl trSoruCevapGrubu = new HtmlGenericControl("tr");
                 FormTable.Controls.Add(trSoruCevapGrubu);
                 HtmlGenericControl tdSoruCevapGrubu = new HtmlGenericControl("td");
                 trSoruCevapGrubu.Controls.Add(tdSoruCevapGrubu);
-                tdSoruCevapGrubu.InnerText = satir["soruvalue"].ToString();
-                tdSoruCevapGrubu.InnerText = satir["cevapvalue"].ToString();
+                tdSoruCevapGrubu.InnerText += satir["soruvalue"].ToString();
+                tdSoruCevapGrubu.InnerText += satir["cevapvalue"].ToString();
             }
             
         }
