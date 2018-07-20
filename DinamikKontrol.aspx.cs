@@ -25,9 +25,9 @@ public partial class Default2 : System.Web.UI.Page
                 {
                     for (int i = 1; i <= Count; i++)
                     {
-                        TextBox txt = new TextBox();
-                        txt.Text = "Label - " + i.ToString();
-                        pnlTextBoxes.Controls.Add(txt);
+                        Label aa = new Label();
+                        aa.Text = "Label - " + i.ToString();
+                        pnlTextBoxes.Controls.Add(aa);
                     }
                 }
                 // textbox üret
