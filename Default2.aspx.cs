@@ -92,6 +92,7 @@ public partial class Default2 : System.Web.UI.Page
 
         HtmlGenericControl FormTable = new HtmlGenericControl("table");
 
+
         foreach (DataRow satir in datam.Rows)
         {
 
@@ -101,10 +102,13 @@ public partial class Default2 : System.Web.UI.Page
                 FormTable.Controls.Add(trSoruCevapGrubu);
                 HtmlGenericControl tdSoruCevapGrubu = new HtmlGenericControl("td");
                 trSoruCevapGrubu.Controls.Add(tdSoruCevapGrubu);
+                HtmlGenericControl radioLabel = new HtmlGenericControl("input");
+                radioLabel.Attributes.Add("type", "radio");
                 tdSoruCevapGrubu.InnerText += satir["soruvalue"].ToString();
-                tdSoruCevapGrubu.InnerText += satir["cevapvalue"].ToString();
+                tdSoruCevapGrubu.Controls.Add(radioLabel);
+                radioLabel.InnerText += satir["cevapvalue"].ToString();
             }
-            
+
         }
         SoruCevapFormu.Controls.Add(FormTable);
     }
