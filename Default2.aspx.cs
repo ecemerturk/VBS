@@ -87,7 +87,7 @@ public partial class Default2 : System.Web.UI.Page
 
     private void DataTableIleFormuDoldur(DataTable datam)
     {
-        string AktifSoruId = "", AktifCevapId = "";
+        string AktifSoruId = "";
 
 
         HtmlGenericControl FormTable = new HtmlGenericControl("table");
@@ -103,8 +103,22 @@ public partial class Default2 : System.Web.UI.Page
                 HtmlGenericControl tdSoruCevapGrubu = new HtmlGenericControl("td");
                 trSoruCevapGrubu.Controls.Add(tdSoruCevapGrubu);
                 HtmlGenericControl radioLabel = new HtmlGenericControl("input");
+                HtmlGenericControl bosluk = new HtmlGenericControl("br");
                 radioLabel.Attributes.Add("type", "radio");
                 tdSoruCevapGrubu.InnerText += satir["soruvalue"].ToString();
+                tdSoruCevapGrubu.Controls.Add(bosluk);
+                tdSoruCevapGrubu.Controls.Add(radioLabel);
+                radioLabel.InnerText += satir["cevapvalue"].ToString();
+                AktifSoruId = satir["soruid"].ToString();
+            }
+            else
+            {
+                HtmlGenericControl trSoruCevapGrubu = new HtmlGenericControl("tr");
+                FormTable.Controls.Add(trSoruCevapGrubu);
+                HtmlGenericControl tdSoruCevapGrubu = new HtmlGenericControl("td");
+                trSoruCevapGrubu.Controls.Add(tdSoruCevapGrubu);
+                HtmlGenericControl radioLabel = new HtmlGenericControl("input");
+                radioLabel.Attributes.Add("type", "radio");
                 tdSoruCevapGrubu.Controls.Add(radioLabel);
                 radioLabel.InnerText += satir["cevapvalue"].ToString();
             }
