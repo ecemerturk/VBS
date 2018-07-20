@@ -57,7 +57,7 @@
                 </li>
                 <li>
                     <asp:Panel ID="Panel7" runat="server">
-                        <a class="dropdown-item" href="reklam.aspx?n=ogrenciformdoldurma">Form Doldurma</a>
+                        <a class="dropdown-item" href="FormDoldurma.aspx">Form Doldurma</a>
                     </asp:Panel>
                 </li>
             </ul>

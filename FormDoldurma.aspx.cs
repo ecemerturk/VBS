@@ -1,0 +1,28 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Data.SqlClient;
+using System.Data;
+using System.Web.Security;
+using System.Configuration;
+using System.Collections;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+using System.ComponentModel;
+using System.Drawing;
+using System.Text;
+using System.Threading.Tasks;
+using sqlQuery;
+
+public partial class FormDoldurma : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        string query = "";
+        string nl = System.Environment.NewLine;
+        query += nl + "";
+    }
+}
