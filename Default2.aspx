@@ -6,7 +6,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <script src="js/bootstrap.min.js"></script>
 <div style="border:medium" id="SoruCevapFormu" runat="server">
-    
+
 </div>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="content1" Runat="Server">
