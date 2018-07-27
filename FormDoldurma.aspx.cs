@@ -25,7 +25,7 @@ public partial class FormDoldurma : System.Web.UI.Page
     {
         string query = "";
         string nl = System.Environment.NewLine;
-        query += nl + "SELECT T.TSORU_ID, T.TSORU, T.TCEVAP_TIPI, C.SORU_ID, C.CEVAP";
+        query += nl + "SELECT T.TSORU_ID, T.TSORU, T.TCEVAP_TIPI, C.CEVAP";
         query += nl + "FROM TAKIP_SORULARI T , CEVAP_SECENEK C";
         query += nl + "WHERE T.TSORU_ID=C.SORU_ID";
         SqlQuery sqlquery = new SqlQuery();
@@ -44,7 +44,7 @@ public partial class FormDoldurma : System.Web.UI.Page
         foreach (DataRow satir in datatable.Rows)
         {
 
-            if (AktifSoruId != satir["SORU_ID"].ToString())
+            if (AktifSoruId != satir["TSORU_ID"].ToString())
             {
                 HtmlGenericControl SoruCevapGrubu = new HtmlGenericControl("div");
                 SoruCevapGrubu.Attributes.Add("class", "row");
@@ -65,7 +65,7 @@ public partial class FormDoldurma : System.Web.UI.Page
 
                 if (satir["TCEVAP_TIPI"].ToString() == "radio")
                 {
-                    if (count != satir["SORU_ID"].ToString())
+                    if (count != satir["TSORU_ID"].ToString())
                     {
                         SoruCevapİçerikGrubu.InnerText += satir["TSORU"].ToString();
                     }
@@ -73,30 +73,30 @@ public partial class FormDoldurma : System.Web.UI.Page
                     SoruCevapİçerikGrubu.Controls.Add(radioGrup);
                     SoruCevapİçerikGrubu.Controls.Add(radioLabel);
                     radioLabel.InnerText += satir["CEVAP"].ToString();
-                    count = satir["SORU_ID"].ToString();
+                    count = satir["TSORU_ID"].ToString();
                     SoruCevapİçerikGrubu.Controls.Add(bosluk);
                 }
                 else if (satir["TCEVAP_TIPI"].ToString() == "check")
                 {
-                    if (count != satir["SORU_ID"].ToString())
+                    if (count != satir["TSORU_ID"].ToString())
                     {
                         SoruCevapİçerikGrubu.InnerText += satir["TSORU"].ToString();
                     }
                     SoruCevapİçerikGrubu.Controls.Add(bosluk);
                     SoruCevapİçerikGrubu.Controls.Add(checkboxLabel);
                     checkboxLabel.InnerText += satir["CEVAP"].ToString();
-                    count = satir["SORU_ID"].ToString();
+                    count = satir["TSORU_ID"].ToString();
                     SoruCevapİçerikGrubu.Controls.Add(bosluk);
                 }
                 else if (satir["TCEVAP_TIPI"].ToString() == "textbox")
                 {
-                    if (count != satir["SORU_ID"].ToString())
+                    if (count != satir["TSORU_ID"].ToString())
                     {
                         SoruCevapİçerikGrubu.InnerText += satir["TSORU"].ToString();
                     }
                     SoruCevapİçerikGrubu.Controls.Add(bosluk);
                     SoruCevapİçerikGrubu.Controls.Add(acikucluCevap);
-                    count = satir["SORU_ID"].ToString();
+                    count = satir["TSORU_ID"].ToString();
                     SoruCevapİçerikGrubu.Controls.Add(bosluk);
                 }
             }
