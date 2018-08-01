@@ -16,7 +16,9 @@ public partial class Default3 : System.Web.UI.Page
     protected void Kaydet_Click(object sender, EventArgs e)
     {
         string query = "";
-        string n1 = System.Environment.NewLine;
+        string nl = System.Environment.NewLine;
+        query += nl + "INSERT INTO KISI (YEMEK_ANA,YEMEK_YAN,YEMEK_SALATA,YEMEK_TATLI)";
+        query += nl + "VALUES ('" + txtYemek.Text + "','" + txtYanYemek.Text + "','" + txtSalata.Text + "','" + txtTatli.Text + "')";
 
         SqlQuery sqlquery = new SqlQuery();
         DataTable datatable = sqlquery.Query(query);
