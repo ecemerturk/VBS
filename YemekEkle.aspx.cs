@@ -17,7 +17,7 @@ public partial class Default3 : System.Web.UI.Page
     {
         string query = "";
         string nl = System.Environment.NewLine;
-        query += nl + "INSERT INTO KISI (YEMEK_ANA,YEMEK_YAN,YEMEK_SALATA,YEMEK_TATLI)";
+        query += nl + "INSERT INTO KISI (YEMEKHANE_ANA,YEMEKHANE_YAN,YEMEKHANE_SALATA,YEMEKHANE_TATLI)";
         query += nl + "VALUES ('" + txtYemek.Text + "','" + txtYanYemek.Text + "','" + txtSalata.Text + "','" + txtTatli.Text + "')";
 
         SqlQuery sqlquery = new SqlQuery();
